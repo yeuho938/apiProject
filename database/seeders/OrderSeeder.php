@@ -12,6 +12,7 @@ class OrderSeeder extends Seeder
             DB::table('orders')->insert([
                 'id_product'=>2,
                 'id_user' =>2,
+                'id_shop'=>1,
                 'id_orderStatus'=>1,
                 'quantity' =>10,
                 'created_at'=>'2020-03-05 11:09:59.000000',
@@ -20,6 +21,7 @@ class OrderSeeder extends Seeder
             DB::table('orders')->insert([
                 'id_product'=>6,
                 'id_user' =>1,
+                'id_shop'=>2,
                 'id_orderStatus'=>3,
                 'quantity' =>10,
                 'created_at'=>'2021-05-05 11:09:59.000000',
@@ -28,6 +30,7 @@ class OrderSeeder extends Seeder
             DB::table('orders')->insert([
                 'id_product'=>5,
                 'id_user' =>3,
+                'id_shop'=>3,
                 'id_orderStatus'=>2,
                 'quantity' =>20,
                 'created_at'=>'2020-05-05 11:09:59.000000',
@@ -36,6 +39,7 @@ class OrderSeeder extends Seeder
             DB::table('orders')->insert([
                 'id_product'=>1,
                 'id_user' =>1,
+                'id_shop'=>4,
                 'id_orderStatus'=>3,
                 'quantity' =>333,
                 'created_at'=>'2021-04-08 11:09:59.000000',
@@ -44,6 +48,7 @@ class OrderSeeder extends Seeder
             DB::table('orders')->insert([
                 'id_product'=>6,
                 'id_user' =>3,
+                'id_shop'=>1,
                 'id_orderStatus'=>3,
                 'quantity' =>23,
                 'created_at'=>'2020-03-05 11:09:59.000000',
@@ -52,6 +57,7 @@ class OrderSeeder extends Seeder
             DB::table('orders')->insert([
                 'id_product'=>7,
                 'id_user' =>3,
+                'id_shop'=>4,
                 'id_orderStatus'=>2,
                 'quantity' =>70,
                 'created_at'=>'2020-03-05 11:09:59.000000',
@@ -60,6 +66,7 @@ class OrderSeeder extends Seeder
             DB::table('orders')->insert([
                 'id_product'=>5,
                 'id_user' =>2,
+                'id_shop'=>4,
                 'id_orderStatus'=>3,
                 'quantity' =>40,
                 'created_at'=>'2021-06-03 11:09:59.000000',
@@ -68,6 +75,7 @@ class OrderSeeder extends Seeder
             DB::table('orders')->insert([
                 'id_product'=>10,
                 'id_user' =>3,
+                'id_shop'=>1,
                 'id_orderStatus'=>3,
                 'quantity' =>3,
                 'created_at'=>'2021-08-09 11:09:59.000000',
@@ -76,6 +84,7 @@ class OrderSeeder extends Seeder
             DB::table('orders')->insert([
                 'id_product'=>9,
                 'id_user' =>3,
+                'id_shop'=>3,
                 'id_orderStatus'=>3,
                 'quantity' =>3,
                 'created_at'=>'2021-10-09 11:09:59.000000',
@@ -84,6 +93,7 @@ class OrderSeeder extends Seeder
             DB::table('orders')->insert([
                 'id_product'=>5,
                 'id_user' =>3,
+                'id_shop'=>1,
                 'id_orderStatus'=>3,
                 'quantity' =>3,
                 'created_at'=>'2021-02-09 11:09:59.000000',
@@ -92,6 +102,7 @@ class OrderSeeder extends Seeder
             DB::table('orders')->insert([
                 'id_product'=>1,
                 'id_user' =>2,
+                'id_shop'=>4,
                 'id_orderStatus'=>3,
                 'quantity' =>3,
                 'created_at'=>'2021-01-09 11:09:59.000000',

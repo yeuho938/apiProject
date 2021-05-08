@@ -28,7 +28,7 @@ class ProductController extends Controller
         $product->type =$request->get('type');
         $product->img =$request->get('img');
         $product->price =$request->get('price');
-        $product->desciption =$request->get('desciption');
+        $product->description =$request->get('description');
         $product->discount =$request->get('discount');
         $product->heart =0;
         $product->quantity =$request->get('quantity');
@@ -49,7 +49,7 @@ class ProductController extends Controller
         $product->type =$request->type;
         $product->img =$request->img;
         $product->price =$request->price;
-        $product->desciption =$request->desciption;
+        $product->description =$request->description;
         $product->discount =$request->discount;
         $product->heart =0;
         $product->quantity =$request->quantity;
@@ -144,18 +144,12 @@ class ProductController extends Controller
 
     // Tính số ngày hiện tại của 1 năm
     $diff = strtotime($firstDayYear) - strtotime($currentDay);
-
-    // 1 day = 24 hours
     // 24 * 60 * 60 = 86400 seconds
     $numberDay = ceil(abs($diff / 86400)) +1;
     ///  7 ngày trong tuần
     $EndDay = $numberDay + $numberDiffWeek - 7*$counter;
     $startDay = $EndDay - 6;
     /// chuyển sàng ngày tháng
-
-    // for($i = $startDay; $i <= $EndDay; $i++){
-    //     return $i;
-    // }
     return $startDay;
 }
 

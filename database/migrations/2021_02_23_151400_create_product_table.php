@@ -17,6 +17,7 @@ class CreateProductTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('type');
+            $table->integer('id_shop');
             $table->string('img');
             $table->float('price');
             $table->longText('description');
