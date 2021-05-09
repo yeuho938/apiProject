@@ -18,37 +18,37 @@ class ShopSeeder extends Seeder
             'id_user' => 1,
             'name'=> 'Yeu ho',
             'address'=> '101B Le huu trac, phuoc my son tra',
-            'image'=> '',
+            'image'=> 'dss',
             'lat'=> 'sđf',
             'lng'=>'dgsdg',
-            'distance'=>3,4
+            'distance'=>3
         ]);
         DB::table('shop')->insert([
             'id_user' => 1,
             'name'=> 'Lao hahah',
             'address'=> '101B Le huu trac, phuoc my son tra',
-            'image'=> '',
+            'image'=> 'dgsdgd',
             'lat'=> 'sđf',
             'lng'=>'dgsdg',
-            'distance'=>3,5
+            'distance'=>3
         ]);
         DB::table('shop')->insert([
             'id_user' => 2,
             'name'=> 'Lao Hac',
             'address'=> '106B Le huu trac, phuoc my son tra',
-            'image'=> '',
+            'image'=> 'sdfsdd',
             'lat'=> 'sđf',
             'lng'=>'dgsdg',
-            'distance'=>6,4
+            'distance'=>6
         ]);
         DB::table('shop')->insert([
             'id_user' => 1,
             'name'=> 'Lao Yeu',
             'address'=> '99 to hien thanh, phuoc my son tra',
-            'image'=> '',
+            'image'=> 'dfsd',
             'lat'=> 'sđf',
             'lng'=>'dgsdg',
-            'distance'=>8,4
+            'distance'=>8
         ]);
     }
 }

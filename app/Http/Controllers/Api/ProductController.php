@@ -18,9 +18,15 @@ class ProductController extends Controller
 
     public function getProduct()
     {
-        return product::all();
+      $product = product::all();
+      return $product;
+        //return product::all();
     }
-    
+    public function getALlProduct($id_user)
+    {
+      $product = DB::select('select p.*,s.* from product as p , shop as s where p.id_shop = s.id and s.id_user ='.$id_user);
+      return $product;
+    }
     public function store(Request $request)
     {
         $product = new product();
@@ -64,7 +70,9 @@ class ProductController extends Controller
         return response()->json($product);
     }
     public function getLineProductChart(){
-        $product=product::select(product::raw('MONTH(created_at) as month'),product::raw('COUNT(id) as sum'))
+        $now = Carbon::now();
+        $yearcurrently = $now->year;
+        $product= product::select(product::raw('MONTH(created_at) as month'),product::raw('COUNT(id) as sum'))
         ->groupBy('month')->get();
         $productmonth=[0,0,0,0,0,0,0,0,0,0,0,0];
         foreach($product as $product){
@@ -89,9 +97,12 @@ class ProductController extends Controller
         }
         return $userstmonth;
     }
+    //New edit
      public function getBarOrderChart(){
-        $order=order::select(order::raw('MONTH(created_at) as month'),order::raw('COUNT(id) as sum'))
-        ->groupBy('month')->get();
+      $now = Carbon::now();
+      $yearcurrently = $now->year;
+        $order= order::select(order::raw('MONTH(created_at) as month'),order::raw('COUNT(id) as sum'))
+        ->whereYear('created_at','=',$yearcurrently)->groupBy('month')->get();
         $order_month=[0,0,0,0,0,0,0,0,0,0,0,0];
         foreach($order as $order){
         for($i=1;$i<=12;$i++){
@@ -103,12 +114,15 @@ class ProductController extends Controller
         return $order_month;
     }
      public function catePieChart(){
+        $now = Carbon::now();
+        $yearcurrently = $now->year;
         $day =Carbon::now()->format('Y-m-d');
         $total_quantity = order::
         join('product', order::raw('id_product'),'=','product.id')
         ->groupBy('id_product','product.name')
         ->select('product.name',order::raw('COUNT(id_product) as total_quantity'))
         ->where(order::raw('CAST(orders.created_at AS DATE)'),'=',$day)
+        //->whereYear('created_at','=',$yearcurrently)
         ->take(5)
         ->get();
         return $total_quantity;

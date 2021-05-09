@@ -20,13 +20,14 @@ class OrderController extends Controller
     public function getOrder()
     {
         $orders = order::all();
-        foreach ($orders as $order) {
-            $order->product;
-            $order->users;
-           }
-     return $orders;
+      return $orders;
     }
-
+    public function getAllOrder($id_user)
+    {
+        $orders = DB::select('select o.*,s.* from orders as o , shop as s where o.id_shop = s.id and s.id_user ='.$id_user);
+      return $orders;
+    }
+    
     /**
      * Store a newly created resource in storage.
      *
